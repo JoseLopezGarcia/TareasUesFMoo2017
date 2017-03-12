@@ -29,6 +29,7 @@ public final class JFRPrincipal extends javax.swing.JFrame {
 
     /**
      * Creates new form JFRPrincipal
+     * UN SOLO COMENTARIO
      */
     boolean ventas, compras, productos, proveedores;
     boolean apagado;
