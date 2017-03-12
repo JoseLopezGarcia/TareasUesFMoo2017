@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package facadeshop.frame;
+package frame;
 
+import com.sun.awt.AWTUtilities;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
@@ -31,129 +32,89 @@ public final class JFRPrincipal extends javax.swing.JFrame {
      * Creates new form JFRPrincipal
      */
     boolean ventas, compras, productos, proveedores;
-    boolean apagado;
+    boolean apagado, principal;
+    int x,y;
+    JTableHeader tHead;
     public JFRPrincipal() {
         initComponents();
+        tHead = tblProductosVender.getTableHeader();
+        cabezera();
         ventas = compras = productos = proveedores = apagado = false;
         btnVentas.setBorder(null);
         btnCompras.setBorder(null);
         btnProductos.setBorder(null);
         btnProveedores.setBorder(null);
         apagado2();
-        habilitarPrincipal();
-        suspenderCompras();
-        suspenderVentas();
-        suspenderProductos();
-        suspenderProveedores();
+        Principal(true);
+        Compras(false);
+        Ventas(false);
+        Productos(false);
+        Proveedores(false);
+    }
+    public void cabezera(){
+        Font fuente = new Font("Times New Roman", Font.BOLD, 18);
+        tHead.setBackground(Color.BLACK);
+        tHead.setForeground(Color.red);
+        tHead.setFont(fuente);
     }
   
-    public void suspenderPrincipal(){
+    public void Principal(boolean estado){
         if(!jpnProveedores.isVisible()){
-        lblMitad1.setVisible(false);
-        lbl3.setVisible(false);
-        lbl4.setVisible(false);
-        lbl5.setVisible(false);
-        lbl6.setVisible(false);
-        lbl7.setVisible(false);
+        lblMitad1.setVisible(estado);
+        lbl3.setVisible(estado);
+        lbl4.setVisible(estado);
+        lbl5.setVisible(estado);
+        lbl6.setVisible(estado);
+        lbl7.setVisible(estado);
         }else{
       }
     }
-    public void habilitarPrincipal(){
+    
+    public void Compras(boolean estado){
         if(!jpnProveedores.isVisible()){
-        lblMitad1.setVisible(true);
-        lbl3.setVisible(true);
-        lbl4.setVisible(true);
-        lbl5.setVisible(true);
-        lbl6.setVisible(true);
-        lbl7.setVisible(true);
+        lblMitad2.setVisible(estado);
+        lbl11.setVisible(estado);
+        lbl12.setVisible(estado);
+        lbl13.setVisible(estado);
+        lbl14.setVisible(estado);
+        lbl15.setVisible(estado);
         }else{
       }
     }
-    public void suspenderCompras(){
+    
+    
+    public void Ventas(boolean estado){
         if(!jpnProveedores.isVisible()){
-        lblMitad2.setVisible(false);
-        lbl11.setVisible(false);
-        lbl12.setVisible(false);
-        lbl13.setVisible(false);
-        lbl14.setVisible(false);
-        lbl15.setVisible(false);
+        lblMitad3.setVisible(estado);
+        lbl21.setVisible(estado);
+        lbl22.setVisible(estado);
+        lbl23.setVisible(estado);
+        lbl24.setVisible(estado);
+        lbl25.setVisible(estado);
         }else{
       }
     }
-    public void habilitarCompras(){
+   
+    public void Productos(boolean estado){
         if(!jpnProveedores.isVisible()){
-        lblMitad2.setVisible(true);
-        lbl11.setVisible(true);
-        lbl12.setVisible(true);
-        lbl13.setVisible(true);
-        lbl14.setVisible(true);
-        lbl15.setVisible(true);
+        lblMitad4.setVisible(estado);
+        lbl31.setVisible(estado);
+        lbl32.setVisible(estado);
+        lbl33.setVisible(estado);
+        lbl34.setVisible(estado);
+        lbl35.setVisible(estado);
         }else{
       }
     }
-    public void suspenderVentas(){
+    
+    public void Proveedores(boolean estado){
         if(!jpnProveedores.isVisible()){
-        lblMitad3.setVisible(false);
-        lbl21.setVisible(false);
-        lbl22.setVisible(false);
-        lbl23.setVisible(false);
-        lbl24.setVisible(false);
-        lbl25.setVisible(false);
-        }else{
-      }
-    }
-    public void habilitarVentas(){
-        if(!jpnProveedores.isVisible()){
-        lblMitad3.setVisible(true);
-        lbl21.setVisible(true);
-        lbl22.setVisible(true);
-        lbl23.setVisible(true);
-        lbl24.setVisible(true);
-        lbl25.setVisible(true);
-        }else{
-      }
-    }
-    public void suspenderProductos(){
-        if(!jpnProveedores.isVisible()){
-        lblMitad4.setVisible(false);
-        lbl31.setVisible(false);
-        lbl32.setVisible(false);
-        lbl33.setVisible(false);
-        lbl34.setVisible(false);
-        lbl35.setVisible(false);
-        }else{
-      }
-    }
-    public void habilitarProductos(){
-        if(!jpnProveedores.isVisible()){
-        lblMitad4.setVisible(true);
-        lbl31.setVisible(true);
-        lbl32.setVisible(true);
-        lbl33.setVisible(true);
-        lbl34.setVisible(true);
-        lbl35.setVisible(true);
-        }else{
-      }
-    }
-    public void suspenderProveedores(){
-        if(!jpnProveedores.isVisible()){
-        lblMitad5.setVisible(false);
-        lbl41.setVisible(false);
-        lbl42.setVisible(false);
-        lbl43.setVisible(false);
-        lbl44.setVisible(false);
-        lbl45.setVisible(false);
-        }else{
-      }
-    }
-    public void habilitarProveedores(){
-        if(!jpnProveedores.isVisible()){
-        lblMitad5.setVisible(true);
-        lbl41.setVisible(true);
-        lbl42.setVisible(true);
-        lbl43.setVisible(true);
-        lbl44.setVisible(true);
-        lbl45.setVisible(true);
+        lblMitad5.setVisible(estado);
+        lbl41.setVisible(estado);
+        lbl42.setVisible(estado);
+        lbl43.setVisible(estado);
+        lbl44.setVisible(estado);
+        lbl45.setVisible(estado);
         }else{
       }
     }
@@ -182,13 +143,10 @@ public final class JFRPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jTextField1 = new javax.swing.JTextField();
+        jpnBarraSuperior = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jpnBarraMenu = new javax.swing.JPanel();
         lblMenu = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         btnCompras = new javax.swing.JButton();
@@ -233,12 +191,6 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         btnEliminarProveedor = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         lblProveedores = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         btnAgregarProveedor = new javax.swing.JButton();
         btnModificarProveedor = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -269,11 +221,11 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         jPanel16 = new javax.swing.JPanel();
         txtCodigoBarraVender = new javax.swing.JTextField();
         txtIdVenta = new javax.swing.JTextField();
-        btnBuscarProductoVenta = new javax.swing.JButton();
         jPanel18 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jPanel20 = new javax.swing.JPanel();
         jLabel20 = new javax.swing.JLabel();
+        lblProveedores1 = new javax.swing.JLabel();
         txtNombreProductoVender = new javax.swing.JTextField();
         txtCantidadVender = new javax.swing.JTextField();
         btnAgregarProductoVenta = new javax.swing.JButton();
@@ -283,14 +235,19 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         btnVender = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         txtPrecioProductoVender = new javax.swing.JTextField();
-        jPanel19 = new javax.swing.JPanel();
-        lblProveedores1 = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jPanel21 = new javax.swing.JPanel();
         jLabel21 = new javax.swing.JLabel();
         jPanel22 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
+        btnBuscarProductoVenta = new javax.swing.JButton();
+        txtTotalventa = new javax.swing.JTextField();
+        txtSubTotalventa = new javax.swing.JTextField();
+        jPanel40 = new javax.swing.JPanel();
+        jLabel34 = new javax.swing.JLabel();
+        jPanel41 = new javax.swing.JPanel();
+        jLabel35 = new javax.swing.JLabel();
         jpnBuscarProducto = new javax.swing.JPanel();
         rbtnNombreProducto = new javax.swing.JRadioButton();
         rbtnCodBarraProducto = new javax.swing.JRadioButton();
@@ -312,6 +269,31 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         jtblBuscarFiltroProductos = new javax.swing.JTable();
         jPanel36 = new javax.swing.JPanel();
         jLabel32 = new javax.swing.JLabel();
+        jpnRegistroCompra = new javax.swing.JPanel();
+        jPanel38 = new javax.swing.JPanel();
+        jpnIdCompra = new javax.swing.JPanel();
+        lblIdCompra = new javax.swing.JLabel();
+        txtIdCompra = new javax.swing.JTextField();
+        jpnProveedor = new javax.swing.JPanel();
+        lblProveedor = new javax.swing.JLabel();
+        cmbProveedor = new javax.swing.JComboBox();
+        jpnCabezeraTablaCompra = new javax.swing.JPanel();
+        lblIdProducto = new javax.swing.JLabel();
+        lblProducto = new javax.swing.JLabel();
+        lblCantidad = new javax.swing.JLabel();
+        lblCosto = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        tblCompra = new javax.swing.JTable();
+        jpnTotal = new javax.swing.JPanel();
+        lblTotal = new javax.swing.JLabel();
+        txtTotal = new javax.swing.JTextField();
+        btnGuardar = new javax.swing.JButton();
+        btnCancelar = new javax.swing.JButton();
+        jpnFecha = new javax.swing.JPanel();
+        lblFecha = new javax.swing.JLabel();
+        txtFecha = new javax.swing.JTextField();
+        jPanel39 = new javax.swing.JPanel();
+        jLabel33 = new javax.swing.JLabel();
         jpnProductos = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jtblProductos = new javax.swing.JTable();
@@ -351,31 +333,6 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         jPanel35 = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
-        jpnRegistroCompra = new javax.swing.JPanel();
-        jPanel38 = new javax.swing.JPanel();
-        jpnIdCompra = new javax.swing.JPanel();
-        lblIdCompra = new javax.swing.JLabel();
-        txtIdCompra = new javax.swing.JTextField();
-        jpnProveedor = new javax.swing.JPanel();
-        lblProveedor = new javax.swing.JLabel();
-        cmbProveedor = new javax.swing.JComboBox();
-        jpnCabezeraTablaCompra = new javax.swing.JPanel();
-        lblIdProducto = new javax.swing.JLabel();
-        lblProducto = new javax.swing.JLabel();
-        lblCantidad = new javax.swing.JLabel();
-        lblCosto = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        tblCompra = new javax.swing.JTable();
-        jpnTotal = new javax.swing.JPanel();
-        lblTotal = new javax.swing.JLabel();
-        txtTotal = new javax.swing.JTextField();
-        btnGuardar = new javax.swing.JButton();
-        btnCancelar = new javax.swing.JButton();
-        jpnFecha = new javax.swing.JPanel();
-        lblFecha = new javax.swing.JLabel();
-        txtFecha = new javax.swing.JTextField();
-        jPanel39 = new javax.swing.JPanel();
-        jLabel33 = new javax.swing.JLabel();
         jpnCompras = new javax.swing.JPanel();
         jpnCabeceraTabla = new javax.swing.JPanel();
         lblCabeceraTabla = new javax.swing.JLabel();
@@ -391,24 +348,24 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         lblProveedores3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/iconos/lanzador.png")).getImage());
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/buscar48.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, -2, 50, 60));
-
-        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator1.setForeground(new java.awt.Color(51, 51, 51));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 40, 190, 10));
-
-        jTextField1.setBackground(new java.awt.Color(0, 0, 0));
-        jTextField1.setForeground(new java.awt.Color(102, 102, 102));
-        jTextField1.setBorder(null);
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 190, 20));
+        jpnBarraSuperior.setBackground(new java.awt.Color(0, 0, 0));
+        jpnBarraSuperior.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        jpnBarraSuperior.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jpnBarraSuperiorMouseDragged(evt);
+            }
+        });
+        jpnBarraSuperior.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jpnBarraSuperiorMousePressed(evt);
+            }
+        });
+        jpnBarraSuperior.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/exit32.png"))); // NOI18N
         jLabel6.setToolTipText("Salir");
@@ -418,23 +375,25 @@ public final class JFRPrincipal extends javax.swing.JFrame {
                 jLabel6MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 0, 30, 50));
+        jpnBarraSuperior.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 0, 30, 50));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/config48.png"))); // NOI18N
-        jLabel5.setToolTipText("Ajustes del Sistema");
-        jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 0, -1, 50));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/lanzador.png"))); // NOI18N
+        jLabel1.setText("iShop");
+        jLabel1.setToolTipText("");
+        jpnBarraSuperior.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, 50));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 55));
+        getContentPane().add(jpnBarraSuperior, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 55));
 
-        jPanel2.setBackground(new java.awt.Color(102, 0, 0));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jpnBarraMenu.setBackground(new java.awt.Color(102, 0, 0));
+        jpnBarraMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblMenu.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblMenu.setForeground(new java.awt.Color(255, 255, 255));
         lblMenu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/mas32.png"))); // NOI18N
         lblMenu.setText("Menu");
-        jPanel2.add(lblMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 15, 90, 50));
+        jpnBarraMenu.add(lblMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 15, 90, 50));
 
         jPanel3.setBackground(new java.awt.Color(102, 0, 0));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -500,7 +459,7 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         });
         jPanel3.add(btnProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(-126, 170, 180, 40));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 77, 190, 230));
+        jpnBarraMenu.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 77, 190, 230));
 
         btnHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/Home48.png"))); // NOI18N
         btnHome.setToolTipText("Inicio");
@@ -510,9 +469,9 @@ public final class JFRPrincipal extends javax.swing.JFrame {
                 btnHomeMouseClicked(evt);
             }
         });
-        jPanel2.add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, -1, -1));
+        jpnBarraMenu.add(btnHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 190, 600));
+        getContentPane().add(jpnBarraMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 190, 600));
 
         jpnPrincipal.setBackground(new java.awt.Color(255, 255, 255));
         jpnPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -547,7 +506,7 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         jPanel4.add(lbl45, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, -1, 30));
 
         lblMitad5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mitad5.jpg"))); // NOI18N
-        jPanel4.add(lblMitad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 220, 480));
+        jPanel4.add(lblMitad5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 220, 480));
         lblMitad5.getAccessibleContext().setAccessibleName("lblMitad5");
 
         lbl31.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
@@ -690,33 +649,6 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         jPanel5.add(lblProveedores, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 10, 110, -1));
 
         jpnProveedores.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 130, 40));
-
-        jPanel6.setBackground(new java.awt.Color(102, 0, 0));
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Elimina a un proveedor:");
-        jPanel6.add(jLabel2);
-
-        jpnProveedores.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 480, 170, -1));
-
-        jPanel7.setBackground(new java.awt.Color(102, 0, 0));
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Agrega a un nuevo proveedor:");
-        jPanel7.add(jLabel3);
-
-        jpnProveedores.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 480, 210, -1));
-
-        jPanel8.setBackground(new java.awt.Color(102, 0, 0));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Modifica la información de un proveedor:");
-        jPanel8.add(jLabel4);
-
-        jpnProveedores.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 480, 270, -1));
 
         btnAgregarProveedor.setBackground(new java.awt.Color(0, 0, 0));
         btnAgregarProveedor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -866,12 +798,6 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         txtIdVenta.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
         jPanel16.add(txtIdVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 140, 30));
 
-        btnBuscarProductoVenta.setBackground(new java.awt.Color(255, 255, 255));
-        btnBuscarProductoVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/buscar.png"))); // NOI18N
-        btnBuscarProductoVenta.setBorder(null);
-        btnBuscarProductoVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel16.add(btnBuscarProductoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 110, 30));
-
         jPanel18.setBackground(new java.awt.Color(102, 0, 0));
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -879,7 +805,7 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         jLabel19.setText("Codigo de Barra");
         jPanel18.add(jLabel19);
 
-        jPanel16.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 110, -1));
+        jPanel16.add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, 110, -1));
 
         jPanel20.setBackground(new java.awt.Color(102, 0, 0));
 
@@ -888,25 +814,32 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         jLabel20.setText("ID Venta");
         jPanel20.add(jLabel20);
 
-        jPanel16.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 80, -1));
+        jPanel16.add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 80, -1));
+
+        lblProveedores1.setBackground(new java.awt.Color(255, 255, 255));
+        lblProveedores1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        lblProveedores1.setForeground(new java.awt.Color(255, 255, 255));
+        lblProveedores1.setText("Ventas");
+        jPanel16.add(lblProveedores1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, 60, -1));
 
         jpnVentas.add(jPanel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 741, 80));
 
+        txtNombreProductoVender.setEditable(false);
+        txtNombreProductoVender.setBackground(new java.awt.Color(255, 255, 255));
         txtNombreProductoVender.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jpnVentas.add(txtNombreProductoVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 360, 40));
+        jpnVentas.add(txtNombreProductoVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 360, 40));
 
         txtCantidadVender.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jpnVentas.add(txtCantidadVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, 80, 40));
+        jpnVentas.add(txtCantidadVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 140, 80, 40));
 
         btnAgregarProductoVenta.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnAgregarProductoVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/agregar2.png"))); // NOI18N
-        btnAgregarProductoVenta.setBorder(null);
         btnAgregarProductoVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jpnVentas.add(btnAgregarProductoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 195, 110, 30));
+        jpnVentas.add(btnAgregarProductoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 140, 110, 30));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        jpnVentas.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 690, 10));
+        jpnVentas.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 690, 10));
 
         tblProductosVender.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -948,29 +881,21 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         tblProductosVender.getTableHeader().setReorderingAllowed(false);
         jScrollPane2.setViewportView(tblProductosVender);
 
-        jpnVentas.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 710, 240));
+        jpnVentas.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 710, 190));
 
         btnVender.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        btnVender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/vender.png"))); // NOI18N
         btnVender.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jpnVentas.add(btnVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 540, 120, 40));
+        jpnVentas.add(btnVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 560, 110, 30));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/Eliminar.png"))); // NOI18N
         jButton4.setToolTipText("Eliminar Productos Seleccionados");
-        jpnVentas.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 520, 110, 30));
+        jpnVentas.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 560, 110, 30));
 
+        txtPrecioProductoVender.setEditable(false);
+        txtPrecioProductoVender.setBackground(new java.awt.Color(255, 255, 255));
         txtPrecioProductoVender.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jpnVentas.add(txtPrecioProductoVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 190, 80, 40));
-
-        jPanel19.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel19.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblProveedores1.setBackground(new java.awt.Color(255, 255, 255));
-        lblProveedores1.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        lblProveedores1.setForeground(new java.awt.Color(255, 255, 255));
-        lblProveedores1.setText("Ventas");
-        jPanel19.add(lblProveedores1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 60, -1));
-
-        jpnVentas.add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 130, 40));
+        jpnVentas.add(txtPrecioProductoVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 140, 80, 40));
 
         jPanel17.setBackground(new java.awt.Color(102, 0, 0));
 
@@ -979,7 +904,7 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         jLabel16.setText("Cantidad");
         jPanel17.add(jLabel16);
 
-        jpnVentas.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, 80, -1));
+        jpnVentas.add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 80, -1));
 
         jPanel21.setBackground(new java.awt.Color(102, 0, 0));
 
@@ -988,18 +913,51 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         jLabel21.setText("Producto");
         jPanel21.add(jLabel21);
 
-        jpnVentas.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 90, -1));
+        jpnVentas.add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 90, -1));
 
         jPanel22.setBackground(new java.awt.Color(102, 0, 0));
 
         jLabel22.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("Precio");
+        jLabel22.setText("Sub-Total");
         jPanel22.add(jLabel22);
 
-        jpnVentas.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 160, 80, -1));
+        jpnVentas.add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 430, 80, -1));
 
-        getContentPane().add(jpnVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, -1, 600));
+        btnBuscarProductoVenta.setBackground(new java.awt.Color(255, 255, 255));
+        btnBuscarProductoVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/buscar.png"))); // NOI18N
+        btnBuscarProductoVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jpnVentas.add(btnBuscarProductoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 560, 110, 30));
+
+        txtTotalventa.setEditable(false);
+        txtTotalventa.setBackground(new java.awt.Color(255, 255, 255));
+        txtTotalventa.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jpnVentas.add(txtTotalventa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 460, 80, 40));
+
+        txtSubTotalventa.setEditable(false);
+        txtSubTotalventa.setBackground(new java.awt.Color(255, 255, 255));
+        txtSubTotalventa.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jpnVentas.add(txtSubTotalventa, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 460, 80, 40));
+
+        jPanel40.setBackground(new java.awt.Color(102, 0, 0));
+
+        jLabel34.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel34.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel34.setText("Precio");
+        jPanel40.add(jLabel34);
+
+        jpnVentas.add(jPanel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 110, 80, -1));
+
+        jPanel41.setBackground(new java.awt.Color(102, 0, 0));
+
+        jLabel35.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel35.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel35.setText("Total");
+        jPanel41.add(jLabel35);
+
+        jpnVentas.add(jPanel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 430, 80, -1));
+
+        getContentPane().add(jpnVentas, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, 730, 600));
 
         jpnBuscarProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1097,6 +1055,126 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         jpnBuscarProducto.add(jPanel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 240, 30));
 
         getContentPane().add(jpnBuscarProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 750, 600));
+
+        jpnRegistroCompra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jpnRegistroCompra.add(jPanel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 5, -1, -1));
+
+        jpnIdCompra.setBackground(new java.awt.Color(102, 0, 0));
+        jpnIdCompra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblIdCompra.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIdCompra.setForeground(new java.awt.Color(255, 255, 255));
+        lblIdCompra.setText("Id Compra:");
+        jpnIdCompra.add(lblIdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, 30));
+
+        jpnRegistroCompra.add(jpnIdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 90, 30));
+
+        txtIdCompra.setText("001");
+        txtIdCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtIdCompraActionPerformed(evt);
+            }
+        });
+        jpnRegistroCompra.add(txtIdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 60, 30));
+
+        jpnProveedor.setBackground(new java.awt.Color(102, 0, 0));
+        jpnProveedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblProveedor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblProveedor.setForeground(new java.awt.Color(255, 255, 255));
+        lblProveedor.setText("Proveedor:");
+        jpnProveedor.add(lblProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 90, 30));
+
+        jpnRegistroCompra.add(jpnProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 110, 30));
+
+        cmbProveedor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pollo Indio", "SONY", "Niña Mirna" }));
+        jpnRegistroCompra.add(cmbProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 200, 30));
+
+        jpnCabezeraTablaCompra.setBackground(new java.awt.Color(102, 0, 0));
+        jpnCabezeraTablaCompra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblIdProducto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblIdProducto.setForeground(new java.awt.Color(255, 255, 255));
+        lblIdProducto.setText("Id Producto");
+        jpnCabezeraTablaCompra.add(lblIdProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 90, 20));
+
+        lblProducto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblProducto.setForeground(new java.awt.Color(255, 255, 255));
+        lblProducto.setText("Producto");
+        jpnCabezeraTablaCompra.add(lblProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 70, 20));
+
+        lblCantidad.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblCantidad.setForeground(new java.awt.Color(255, 255, 255));
+        lblCantidad.setText("Cantidad");
+        jpnCabezeraTablaCompra.add(lblCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 80, 20));
+
+        lblCosto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblCosto.setForeground(new java.awt.Color(255, 255, 255));
+        lblCosto.setText("Costo");
+        jpnCabezeraTablaCompra.add(lblCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 50, 20));
+
+        jpnRegistroCompra.add(jpnCabezeraTablaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 660, 20));
+
+        tblCompra.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane6.setViewportView(tblCompra);
+
+        jpnRegistroCompra.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 660, 230));
+
+        jpnTotal.setBackground(new java.awt.Color(102, 0, 0));
+        jpnTotal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTotal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblTotal.setForeground(new java.awt.Color(255, 255, 255));
+        lblTotal.setText("Total:");
+        jpnTotal.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 40));
+
+        jpnRegistroCompra.add(jpnTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 60, 40));
+
+        txtTotal.setText("$");
+        jpnRegistroCompra.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 100, 40));
+
+        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/guardarprov.png"))); // NOI18N
+        jpnRegistroCompra.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 540, 110, 30));
+
+        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/atras.png"))); // NOI18N
+        btnCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCancelarMouseClicked(evt);
+            }
+        });
+        jpnRegistroCompra.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 540, 110, 30));
+
+        jpnFecha.setBackground(new java.awt.Color(102, 0, 0));
+        jpnFecha.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblFecha.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lblFecha.setForeground(new java.awt.Color(255, 255, 255));
+        lblFecha.setText("Fecha:");
+        jpnFecha.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 30));
+
+        jpnRegistroCompra.add(jpnFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 60, 30));
+        jpnRegistroCompra.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 160, 30));
+
+        jPanel39.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel39.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel33.setText("Agregar una Compra:");
+        jPanel39.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, -1, 30));
+
+        jpnRegistroCompra.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 240, 30));
+
+        getContentPane().add(jpnRegistroCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 55, 750, 590));
 
         jpnProductos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1223,7 +1301,7 @@ public final class JFRPrincipal extends javax.swing.JFrame {
 
         jpnProductos.add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 430, 130, -1));
 
-        getContentPane().add(jpnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 730, 600));
+        getContentPane().add(jpnProductos, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 750, 600));
 
         jpnNuevoProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1318,126 +1396,6 @@ public final class JFRPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(jpnNuevoProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 750, 600));
 
-        jpnRegistroCompra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jpnRegistroCompra.add(jPanel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 5, -1, -1));
-
-        jpnIdCompra.setBackground(new java.awt.Color(102, 0, 0));
-        jpnIdCompra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblIdCompra.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblIdCompra.setForeground(new java.awt.Color(255, 255, 255));
-        lblIdCompra.setText("Id Compra:");
-        jpnIdCompra.add(lblIdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, 30));
-
-        jpnRegistroCompra.add(jpnIdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 90, 30));
-
-        txtIdCompra.setText("001");
-        txtIdCompra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtIdCompraActionPerformed(evt);
-            }
-        });
-        jpnRegistroCompra.add(txtIdCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 60, 30));
-
-        jpnProveedor.setBackground(new java.awt.Color(102, 0, 0));
-        jpnProveedor.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblProveedor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblProveedor.setForeground(new java.awt.Color(255, 255, 255));
-        lblProveedor.setText("Proveedor:");
-        jpnProveedor.add(lblProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 90, 30));
-
-        jpnRegistroCompra.add(jpnProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 110, 30));
-
-        cmbProveedor.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pollo Indio", "SONY", "Niña Mirna" }));
-        jpnRegistroCompra.add(cmbProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 130, 200, 30));
-
-        jpnCabezeraTablaCompra.setBackground(new java.awt.Color(102, 0, 0));
-        jpnCabezeraTablaCompra.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblIdProducto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblIdProducto.setForeground(new java.awt.Color(255, 255, 255));
-        lblIdProducto.setText("Id Producto");
-        jpnCabezeraTablaCompra.add(lblIdProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 0, 90, 20));
-
-        lblProducto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblProducto.setForeground(new java.awt.Color(255, 255, 255));
-        lblProducto.setText("Producto");
-        jpnCabezeraTablaCompra.add(lblProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 70, 20));
-
-        lblCantidad.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblCantidad.setForeground(new java.awt.Color(255, 255, 255));
-        lblCantidad.setText("Cantidad");
-        jpnCabezeraTablaCompra.add(lblCantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 80, 20));
-
-        lblCosto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblCosto.setForeground(new java.awt.Color(255, 255, 255));
-        lblCosto.setText("Costo");
-        jpnCabezeraTablaCompra.add(lblCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 0, 50, 20));
-
-        jpnRegistroCompra.add(jpnCabezeraTablaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 660, 20));
-
-        tblCompra.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane6.setViewportView(tblCompra);
-
-        jpnRegistroCompra.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 660, 230));
-
-        jpnTotal.setBackground(new java.awt.Color(102, 0, 0));
-        jpnTotal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblTotal.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblTotal.setForeground(new java.awt.Color(255, 255, 255));
-        lblTotal.setText("Total:");
-        jpnTotal.add(lblTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 40, 40));
-
-        jpnRegistroCompra.add(jpnTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 490, 60, 40));
-
-        txtTotal.setText("$");
-        jpnRegistroCompra.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 490, 100, 40));
-
-        btnGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/guardarprov.png"))); // NOI18N
-        jpnRegistroCompra.add(btnGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 540, 110, 30));
-
-        btnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/atras.png"))); // NOI18N
-        btnCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnCancelarMouseClicked(evt);
-            }
-        });
-        jpnRegistroCompra.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 540, 110, 30));
-
-        jpnFecha.setBackground(new java.awt.Color(102, 0, 0));
-        jpnFecha.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblFecha.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblFecha.setForeground(new java.awt.Color(255, 255, 255));
-        lblFecha.setText("Fecha:");
-        jpnFecha.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 30));
-
-        jpnRegistroCompra.add(jpnFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 60, 30));
-        jpnRegistroCompra.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 160, 30));
-
-        jPanel39.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel39.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel33.setText("Agregar una Compra:");
-        jPanel39.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, -1, 30));
-
-        jpnRegistroCompra.add(jPanel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 240, 30));
-
-        getContentPane().add(jpnRegistroCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 55, 740, 600));
-
         jpnCompras.setName("jpnCompras"); // NOI18N
         jpnCompras.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1519,7 +1477,7 @@ public final class JFRPrincipal extends javax.swing.JFrame {
 
         jpnCompras.add(jPanel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, 130, 40));
 
-        getContentPane().add(jpnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 55, 740, 600));
+        getContentPane().add(jpnCompras, new org.netbeans.lib.awtextra.AbsoluteConstraints(175, 55, 740, 590));
 
         pack();
         setLocationRelativeTo(null);
@@ -1533,56 +1491,62 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(!compras)
         Animacion.Animacion.mover_derecha(-126, 0, 1, 2, btnCompras);
-        suspenderPrincipal();
-        habilitarCompras();
+        Principal(false);
+        Compras(true);
     }//GEN-LAST:event_btnComprasMouseEntered
 
     private void btnComprasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprasMouseExited
         // TODO add your handling code here:
+        if(apagado==false){
         if(!compras)
         Animacion.Animacion.mover_izquierda(0, -126, 1, 2, btnCompras);
-        habilitarPrincipal();
-        suspenderCompras();
+        Principal(true);
+        Compras(false);
+        }
     }//GEN-LAST:event_btnComprasMouseExited
 
     private void btnVentasMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVentasMouseEntered
         // TODO add your handling code here:
         if(!ventas)
             Animacion.Animacion.mover_derecha(-126, 0, 1, 2, btnVentas);
-            suspenderPrincipal();
-            habilitarVentas();
+            Principal(false);
+            Ventas(true);
     }//GEN-LAST:event_btnVentasMouseEntered
 
     private void btnVentasMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVentasMouseExited
         // TODO add your handling code here:
+        if(apagado==false){
         if(!ventas)
             Animacion.Animacion.mover_izquierda(0, -126, 1, 2, btnVentas);  
-            habilitarPrincipal();
-            suspenderVentas();
+            Principal(true);
+            Ventas(false);
+        }
     }//GEN-LAST:event_btnVentasMouseExited
 
     private void btnProductosMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductosMouseEntered
         // TODO add your handling code here:
         if(!productos)
             Animacion.Animacion.mover_derecha(-126, 0, 1, 2, btnProductos);   
-            suspenderPrincipal();
-            habilitarProductos();
+            Principal(false);
+            Productos(true);
     }//GEN-LAST:event_btnProductosMouseEntered
 
     private void btnProductosMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProductosMouseExited
         // TODO add your handling code here:
+        if(apagado==false){
         if(!productos)
             Animacion.Animacion.mover_izquierda(0, -126, 1, 2, btnProductos); 
-            habilitarPrincipal();
-            suspenderProductos();
+            Principal(true);
+            Productos(false);
+        }
     }//GEN-LAST:event_btnProductosMouseExited
 
     private void btnProveedoresMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProveedoresMouseEntered
         // TODO add your handling code here:
         if(!proveedores)
             Animacion.Animacion.mover_derecha(-126, 0, 1, 2, btnProveedores);   
-            suspenderPrincipal();
-            habilitarProveedores();
+            Principal(false);
+            Proveedores(true);
     }//GEN-LAST:event_btnProveedoresMouseEntered
 
     private void btnProveedoresMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProveedoresMouseExited
@@ -1590,8 +1554,8 @@ public final class JFRPrincipal extends javax.swing.JFrame {
      if(apagado==false){
      if(!proveedores)
             Animacion.Animacion.mover_izquierda(0, -126, 1, 2, btnProveedores); 
-            habilitarPrincipal();
-            suspenderProveedores();
+            Principal(true);
+            Proveedores(false);
      }else{}
                 
     }//GEN-LAST:event_btnProveedoresMouseExited
@@ -1600,10 +1564,9 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         apagado();
         Animacion.Animacion.mover_derecha(-126, 0, 1, 2, btnProveedores);  
+        apagado2();
         jpnProveedores.setVisible(true);
-        jpnVentas.setVisible(false);
-        jpnProductos.setVisible(false);
-        jpnCompras.setVisible(false);
+
         
     }//GEN-LAST:event_btnProveedoresMouseClicked
 
@@ -1612,11 +1575,11 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         apagado2();
         apagado = false;
         jpnPrincipal.setVisible(true);
-        habilitarPrincipal();
-        suspenderCompras();
-        suspenderVentas();
-        suspenderProductos();
-        suspenderProveedores();
+        Principal(true);
+        Compras(false);
+        Ventas(false);
+        Productos(false);
+        Proveedores(false);
         
     }//GEN-LAST:event_btnHomeMouseClicked
 
@@ -1631,17 +1594,16 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         jpnAgregarProv.setVisible(false);
         jpnProveedores.setVisible(true);
-        Animacion.Animacion.mover_derecha(-126, 0, 1, 2, btnProveedores); 
+       Animacion.Animacion.mover_derecha(-126, 0, 1, 2, btnProveedores); 
     }//GEN-LAST:event_btnAtrasProveedoresMouseClicked
 
     private void btnVentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVentasMouseClicked
         // TODO add your handling code here:
         apagado();
         Animacion.Animacion.mover_derecha(-126, 0, 1, 2, btnVentas);  
+        apagado2();
         jpnVentas.setVisible(true);
-        jpnProveedores.setVisible(false);
-        jpnProductos.setVisible(false);
-        jpnCompras.setVisible(false);
+
     }//GEN-LAST:event_btnVentasMouseClicked
 
     private void btnNuevoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNuevoProductoActionPerformed
@@ -1675,9 +1637,7 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         apagado();
         Animacion.Animacion.mover_derecha(-126, 0, 1, 2, btnProductos);  
-        jpnVentas.setVisible(false);
-        jpnProveedores.setVisible(false);
-        jpnCompras.setVisible(false);
+        apagado2();
         jpnProductos.setVisible(true);
     }//GEN-LAST:event_btnProductosMouseClicked
 
@@ -1711,11 +1671,18 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         apagado();
         Animacion.Animacion.mover_derecha(-126, 0, 1, 2, btnCompras);  
-        jpnVentas.setVisible(false);
-        jpnProveedores.setVisible(false);
-        jpnProductos.setVisible(false);
+        apagado2();
         jpnCompras.setVisible(true);
     }//GEN-LAST:event_btnComprasMouseClicked
+
+    private void jpnBarraSuperiorMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpnBarraSuperiorMousePressed
+        x = evt.getX(); 
+        y = evt.getY();
+    }//GEN-LAST:event_jpnBarraSuperiorMousePressed
+
+    private void jpnBarraSuperiorMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpnBarraSuperiorMouseDragged
+         this.setLocation(this.getLocation().x + evt.getX() - x, this.getLocation().y + evt.getY() - y);
+    }//GEN-LAST:event_jpnBarraSuperiorMouseDragged
 
     /**
      * @param args the command line arguments
@@ -1795,7 +1762,6 @@ public final class JFRPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -1806,18 +1772,16 @@ public final class JFRPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -1827,8 +1791,6 @@ public final class JFRPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel18;
-    private javax.swing.JPanel jPanel19;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel21;
     private javax.swing.JPanel jPanel22;
@@ -1851,10 +1813,9 @@ public final class JFRPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel38;
     private javax.swing.JPanel jPanel39;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel40;
+    private javax.swing.JPanel jPanel41;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -1862,10 +1823,10 @@ public final class JFRPrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JPanel jpnAgregarProv;
+    private javax.swing.JPanel jpnBarraMenu;
+    private javax.swing.JPanel jpnBarraSuperior;
     private javax.swing.JPanel jpnBuscarProducto;
     private javax.swing.JPanel jpnCabeceraTabla;
     private javax.swing.JPanel jpnCabezeraTablaCompra;
@@ -1958,8 +1919,10 @@ public final class JFRPrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField txtNombreProveedor;
     private javax.swing.JTextField txtPrecioProductoVender;
     private javax.swing.JTextField txtPrecioProductos;
+    private javax.swing.JTextField txtSubTotalventa;
     private javax.swing.JTextField txtTelefonoProveedor;
     private javax.swing.JTextField txtTotal;
+    private javax.swing.JTextField txtTotalventa;
     // End of variables declaration//GEN-END:variables
 
     private void setVisible(JPopupMenu MenuEmergente) {

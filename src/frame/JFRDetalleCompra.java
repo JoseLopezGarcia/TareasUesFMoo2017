@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package facadeshop.frame;
+package frame;
 
 /**
  *
@@ -14,8 +14,11 @@ public class JFRDetalleCompra extends javax.swing.JFrame {
     /**
      * Creates new form JFRDetalleCompra
      */
+    int x,y;
+    
     public JFRDetalleCompra() {
         initComponents();
+        
     }
 
     /**
@@ -39,6 +42,7 @@ public class JFRDetalleCompra extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jpnIdCompra2 = new javax.swing.JPanel();
         lblIdCompra2 = new javax.swing.JLabel();
         txtIdCompra2 = new javax.swing.JTextField();
@@ -151,9 +155,22 @@ public class JFRDetalleCompra extends javax.swing.JFrame {
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 540, -1, -1));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        jPanel2.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanel2MouseDragged(evt);
+            }
+        });
+        jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanel2MousePressed(evt);
+            }
+        });
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/exit32.png"))); // NOI18N
@@ -166,6 +183,13 @@ public class JFRDetalleCompra extends javax.swing.JFrame {
         });
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 0, 30, 50));
         jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, -30, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/lanzador.png"))); // NOI18N
+        jLabel1.setText("iShop");
+        jLabel1.setToolTipText("");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 110, 50));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 920, 55));
 
@@ -291,7 +315,7 @@ public class JFRDetalleCompra extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void btnComprasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnComprasMouseClicked
@@ -348,6 +372,15 @@ public class JFRDetalleCompra extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtIdCompra2ActionPerformed
 
+    private void jPanel2MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MouseDragged
+         this.setLocation(this.getLocation().x + evt.getX() - x, this.getLocation().y + evt.getY() - y);
+    }//GEN-LAST:event_jPanel2MouseDragged
+
+    private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
+         x = evt.getX(); 
+         y = evt.getY();
+    }//GEN-LAST:event_jPanel2MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -389,6 +422,7 @@ public class JFRDetalleCompra extends javax.swing.JFrame {
     private javax.swing.JButton btnProductos;
     private javax.swing.JButton btnProveedores;
     private javax.swing.JButton btnVentas;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;

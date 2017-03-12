@@ -5,7 +5,7 @@
  */
 package facadeshop;
 
-import facadeshop.frame.JFRPrincipal;
+import frame.JFRPrincipal;
 
 /**
  *
