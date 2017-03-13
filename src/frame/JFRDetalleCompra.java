@@ -5,6 +5,10 @@
  */
 package frame;
 
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.table.JTableHeader;
+
 /**
  *
  * @author Pedro Baños
@@ -15,10 +19,14 @@ public class JFRDetalleCompra extends javax.swing.JFrame {
      * Creates new form JFRDetalleCompra
      */
     int x,y;
-    
+    JTableHeader tHeadCompra2;
     public JFRDetalleCompra() {
         initComponents();
-        
+        tHeadCompra2=tblCompra2.getTableHeader();
+        Font fuente = new Font("Times New Roman", Font.BOLD, 18);
+        tHeadCompra2.setBackground(jpnIdCompra2.getBackground());
+        tHeadCompra2.setForeground(Color.WHITE);
+        tHeadCompra2.setFont(fuente);
     }
 
     /**
@@ -49,11 +57,6 @@ public class JFRDetalleCompra extends javax.swing.JFrame {
         jpnProveedor2 = new javax.swing.JPanel();
         lblProveedor2 = new javax.swing.JLabel();
         txtProveedor2 = new javax.swing.JTextField();
-        jpnCabezeraTablaCompra2 = new javax.swing.JPanel();
-        lblIdProducto2 = new javax.swing.JLabel();
-        lblProducto = new javax.swing.JLabel();
-        lblCantidad2 = new javax.swing.JLabel();
-        lblCosto2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCompra2 = new javax.swing.JTable();
         jpnFecha2 = new javax.swing.JPanel();
@@ -224,31 +227,6 @@ public class JFRDetalleCompra extends javax.swing.JFrame {
         txtProveedor2.setText("Pollo Indio");
         getContentPane().add(txtProveedor2, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 150, 30));
 
-        jpnCabezeraTablaCompra2.setBackground(new java.awt.Color(102, 0, 0));
-        jpnCabezeraTablaCompra2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        lblIdProducto2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblIdProducto2.setForeground(new java.awt.Color(255, 255, 255));
-        lblIdProducto2.setText("Id Producto");
-        jpnCabezeraTablaCompra2.add(lblIdProducto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 0, 80, 20));
-
-        lblProducto.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblProducto.setForeground(new java.awt.Color(255, 255, 255));
-        lblProducto.setText("Producto");
-        jpnCabezeraTablaCompra2.add(lblProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 0, 70, 20));
-
-        lblCantidad2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblCantidad2.setForeground(new java.awt.Color(255, 255, 255));
-        lblCantidad2.setText("Cantidad");
-        jpnCabezeraTablaCompra2.add(lblCantidad2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 0, 60, 20));
-
-        lblCosto2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        lblCosto2.setForeground(new java.awt.Color(255, 255, 255));
-        lblCosto2.setText("Costo");
-        jpnCabezeraTablaCompra2.add(lblCosto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 0, 60, 20));
-
-        getContentPane().add(jpnCabezeraTablaCompra2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 830, 20));
-
         tblCompra2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -257,7 +235,7 @@ public class JFRDetalleCompra extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "id Producto", "Producto", "Cantidad", "Costo"
             }
         ));
         tblCompra2.setEnabled(false);
@@ -431,22 +409,17 @@ public class JFRDetalleCompra extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JPanel jpnCabezeraTablaCompra2;
     private javax.swing.JPanel jpnFecha2;
     private javax.swing.JPanel jpnIdCompra2;
     private javax.swing.JPanel jpnIdCompra3;
     private javax.swing.JPanel jpnIdCompra4;
     private javax.swing.JPanel jpnProveedor2;
     private javax.swing.JPanel jpnTotal2;
-    private javax.swing.JLabel lblCantidad2;
-    private javax.swing.JLabel lblCosto2;
     private javax.swing.JLabel lblFecha2;
     private javax.swing.JLabel lblIdCompra2;
     private javax.swing.JLabel lblIdCompra3;
     private javax.swing.JLabel lblIdCompra4;
-    private javax.swing.JLabel lblIdProducto2;
     private javax.swing.JLabel lblMenu;
-    private javax.swing.JLabel lblProducto;
     private javax.swing.JLabel lblProveedor2;
     private javax.swing.JLabel lblTotal2;
     private javax.swing.JTable tblCompra2;
