@@ -23,6 +23,7 @@ public final class JFRPrincipal extends javax.swing.JFrame {
     boolean apagado, principal;
     int x,y;
     JTableHeader tHeadVentas,tHeadCompras,tHeadProductos,tHeadCompra,tHeadProveedores;
+    
     public JFRPrincipal() {
         initComponents();
         tHeadVentas = tblProductosVender.getTableHeader();
@@ -876,11 +877,11 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         btnVender.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         btnVender.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/vender.png"))); // NOI18N
         btnVender.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jpnVentas.add(btnVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 560, 110, 30));
+        jpnVentas.add(btnVender, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 550, 110, 30));
 
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/Eliminar.png"))); // NOI18N
         jButton4.setToolTipText("Eliminar Productos Seleccionados");
-        jpnVentas.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 560, 110, 30));
+        jpnVentas.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 550, 110, 30));
 
         txtPrecioProductoVender.setEditable(false);
         txtPrecioProductoVender.setBackground(new java.awt.Color(255, 255, 255));
@@ -917,7 +918,7 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         btnBuscarProductoVenta.setBackground(new java.awt.Color(255, 255, 255));
         btnBuscarProductoVenta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/facadeshop/icons/buscar.png"))); // NOI18N
         btnBuscarProductoVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jpnVentas.add(btnBuscarProductoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 560, 110, 30));
+        jpnVentas.add(btnBuscarProductoVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 550, 110, 30));
 
         txtTotalventa.setEditable(false);
         txtTotalventa.setBackground(new java.awt.Color(255, 255, 255));
