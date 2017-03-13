@@ -22,7 +22,7 @@ public final class JFRPrincipal extends javax.swing.JFrame {
     boolean ventas, compras, productos, proveedores;
     boolean apagado, principal;
     int x,y;
-    JTableHeader tHeadVentas,tHeadCompras,tHeadProductos,tHeadCompra,tHeadProveedores;
+    JTableHeader tHeadVentas,tHeadCompras,tHeadProductos,tHeadCompra,tHeadProveedores,tHeadFiltro;
     
     public JFRPrincipal() {
         initComponents();
@@ -31,6 +31,7 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         tHeadProductos=jtblProductos.getTableHeader();
         tHeadCompra=tblCompra.getTableHeader();
         tHeadProveedores=tblProveedores.getTableHeader();
+        tHeadFiltro=jtblBuscarFiltroProductos.getTableHeader();
         
         cabezera();
         ventas = compras = productos = proveedores = apagado = false;
@@ -66,6 +67,10 @@ public final class JFRPrincipal extends javax.swing.JFrame {
         tHeadProveedores.setBackground(jpnBarraMenu.getBackground());
         tHeadProveedores.setForeground(Color.WHITE);
         tHeadProveedores.setFont(fuente);
+        
+        tHeadFiltro.setBackground(jpnBarraMenu.getBackground());
+        tHeadFiltro.setForeground(Color.WHITE);
+        tHeadFiltro.setFont(fuente);
     }
   
     public void Principal(boolean estado){
